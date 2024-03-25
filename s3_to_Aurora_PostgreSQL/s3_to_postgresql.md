@@ -9,11 +9,11 @@ Apache NiFi で、S3ファイルの更新を検知して、更新されたファ
 
 # 手順
 
-1) JSON をダウンロード
-   JSONファイル
+1.) JSON をダウンロード
+JSONファイル
 * [Import_S3_To_Aurora_PostgreSQL.json](https://raw.githubusercontent.com/zz22394/nifi-cookbook/main/s3_to_Aurora_PostgreSQL/Import_S3_To_Aurora_PostgreSQL.json)
 
-2) 新しいプロセッサーグループを作成。作成時、保存したJSONをアップロード
+2.) 新しいプロセッサーグループを作成。作成時、保存したJSONをアップロード
 
 ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/133516/a918592f-051c-041a-26d8-aeecf7f46570.png)
 
@@ -23,7 +23,7 @@ Apache NiFi で、S3ファイルの更新を検知して、更新されたファ
 これでImport完了：
 ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/133516/4d4f738a-8a9e-2c38-263a-bc8572e231ee.png)
 
-3) JDBCドライバーを入れる
+3.) JDBCドライバーを入れる
 
 ```bash
 wget https://jdbc.postgresql.org/download/postgresql-42.7.3.jar
@@ -31,7 +31,7 @@ mkdir /tmp/nifi
 mv postgresql-42.7.3.jar /tmp/nifi/
 ```
 
-4) パラメータ設定
+4.) パラメータ設定
 
 4.1) ListS3 のパラメータ設定
 
@@ -82,11 +82,12 @@ PutDatabaseRecordプロセッサーの設定：
 ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/133516/3c4b6f85-6d87-43f0-c9d7-3211d57ca497.png)
 
 
-6) 起動
+6.) 起動
 
 ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/133516/b9fd6e9c-6cd6-b2fd-32c6-77e68c2a00ec.png)
 
 
-7) 履歴を確認：
+7.) 履歴を確認：
+![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/133516/ff38668d-88ad-60b1-039f-7ab9db4a985b.png)
 
 ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/133516/3d6e9d58-46f9-30be-8212-1d5b0d66d5bf.png)
