@@ -98,6 +98,7 @@ This `ExecuteSQLRecord` uses two Service,
 ## Step 3 : Create DBCPConnectionPool
 Download the Oracle JDBC Driver from here
 https://www.oracle.com/jp/database/technologies/appdev/jdbc-downloads.html
+
 ![Download the Oracle JDBC Driver from here](3-1-Oracle-JDBC-list.png)
 
 Save the jdbc driver here (or anywhere your nifi can access):
@@ -121,28 +122,36 @@ We can use default settings here.
 
 ## Step 5 : UpdateAttribute to set the file name in Azure
 Add a value :
+
 ![5-UpdateAttribute.png](5-1-UpdateAttribute.png)
 Key : `azure.filename`
 Value : `${uuid:append('.ext')}`
 
 
 ## Step 6 : Use `PutAzureDataLakeStorage` to save data into Azure
+
 ![6-1-PutAzureDataLakeStorage.png](6-1-PutAzureDataLakeStorage.png)
 
 ## Step 7: Create `ADLSCredentialsControllerService` service for `PutAzureDataLakeStorage` so that we can save data into Azure
+
 ![ADLSCredentialsControllerService](7-1-ADLSCredentialsControllerService.png)
 * Storage Account Name : the value in your Azure account 
-![7-2-Azure-StorageAccount.png](7-2-Azure-StorageAccount.png)
+
+* ![7-2-Azure-StorageAccount.png](7-2-Azure-StorageAccount.png)
 * SAS Token : The value in your Azure account
-![5-3-Azure-SAS-Token.png](7-3-Azure-SAS-Token.png)
+
+* ![5-3-Azure-SAS-Token.png](7-3-Azure-SAS-Token.png)
 
 
 ## Step 8: Enable the 3 services
-![img.png](8-1-Enable-the-3-services.png)
+
+![Enable-the-3-services.png](8-1-Enable-the-3-services.png)
 
 ## Step 9: Have a try
 `Run Once`
-![img.png](9-1-try.png)
+
+![try.png](9-1-try.png)
 
 And you will find the files are there
-![img.png](9-2-result.png)
+
+![result.png](9-2-result.png)
